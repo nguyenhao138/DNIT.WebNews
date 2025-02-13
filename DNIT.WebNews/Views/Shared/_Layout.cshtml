@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"] </title>
+
+  <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/site.css" asp-append-version="true" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" asp-append-version="true" media="all" />
+  <link rel="stylesheet" type="text/css" href="/css/global-styles.css" asp-append-version="true" media="all" />
+  <link rel="stylesheet" type="text/css" href="/css/font/roboto.css" asp-append-version="true" media="all" />
+  <link rel="stylesheet" type="text/css" href="/css/index.css" asp-append-version="true" media="all" />
+
+  <link rel="icon" href="/favicon.ico" />
+</head>
+<body class="home blog content-sidebar class-contact" itemscope itemtype="https:/schema.org/WebPage">
+  <div class="site-container">
+    @await Html.PartialAsync("Home/_Header")
+    @await Html.PartialAsync("Home/_Nav")
+    @if (ViewData["Breadcrumb"] != null)
+    {
+      <div class="breadcrumb"
+           itemscope=""
+           itemtype="https://schema.org/BreadcrumbList">
+        <div class="wrap">
+          @Html.Raw(ViewData["Breadcrumb"])
+        </div>
+      </div>
+    }
+    <div class="site-inner">
+      <div class="content-sidebar-wrap">
+        @RenderBody()
+        @if (ViewData["RightView"] == null)
+        {
+          @await Html.PartialAsync("Home/_RightView")
+        }
+        
+      </div>
+
+      @await Html.PartialAsync("Home/_ContentBanner")
+      @await Html.PartialAsync("Home/_ContentClient")
+      @await Html.PartialAsync("Home/_ContentFix")
+      
+    </div>
+    @await Html.PartialAsync("Home/_Footer")
+    <span id="backtotop" title="Lên đầu trang"> ↑ </span>
+  </div>
+  <script src="/lib/jquery/dist/jquery.js"></script>
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/countup.min.js" asp-append-version="true"> </script>
+  <script src="/js/slick.js" asp-append-version="true"></script>
+  <script src="/js/index.js" asp-append-version="true"></script>
+
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

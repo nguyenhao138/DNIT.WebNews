@@ -1,0 +1,90 @@
+.site-title a,
+.site-title a:hover {
+  background: unset;
+  text-indent: inherit;
+  display: grid;
+  align-items: center;
+}
+
+div#toc_container {
+  width: 97%;
+}
+
+#backtotop {
+  position: fixed;
+  bottom: 15%;
+  left: 2%;
+  border-radius: 100%;
+  background-color: rgba(85, 85, 85, 0.5);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+  line-height: 50px;
+  display: none;
+}
+
+.attachment-full.size-full {
+  max-width: 100%;
+  height: auto;
+}
+
+.o-search-mobile {
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+.o-search-mobile > img {
+  width: 27px;
+  height: 27px;
+}
+
+.o-popup-tag.o-bg-white.o-border.o-rounded.o-shadow {
+  width: 400px;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+.bootstrapiso.notranslate > .tooltip.fade.bs-tooltip-bottom {
+  position: absolute;
+  transform: translate3d(64px, 5px, 0px);
+  top: 0px;
+  left: 0px;
+  will-change: transform;
+}
+
+.bootstrapiso.notranslate > .tooltip.fade.bs-tooltip-top {
+  position: absolute;
+  transform: translate3d(20px, 101px, 0px);
+  top: 0px;
+  left: 0px;
+  will-change: transform;
+}
+.arrow {
+  left: 0px;
+}
+
+.row.first_row {
+  margin-left: -7.5px;
+  margin-right: -7.5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+ul.menu.genesis-nav-menu.menu-primary{
+  padding:0px;
+}
+
+.stt{
+  display: inline-block;
+  width: 38px;
+}
+
+li#menu-item-1368 a span{
+  box-sizing: content-box!important;
+}

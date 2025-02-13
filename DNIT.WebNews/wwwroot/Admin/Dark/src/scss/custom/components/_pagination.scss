@@ -1,0 +1,39 @@
+// 
+// pagination.scss
+//
+
+
+// Pagination rounded (Custom)
+.pagination-rounded {
+  .page-link {
+    border-radius: 30px !important;
+    margin: 0 3px;
+    border: none;
+  }
+}
+
+.page-item {
+  &.active {
+    .page-link {
+     background: $bg-gradient;
+     border-color: $primary;
+    }
+  }
+}
+
+.pagination-split li {
+  margin-left: 5px;
+  display: inline-block;
+  float: left;
+}
+
+.pagination-split li:first-child {
+  margin-left: 0;
+}
+
+.pagination-split li a {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+

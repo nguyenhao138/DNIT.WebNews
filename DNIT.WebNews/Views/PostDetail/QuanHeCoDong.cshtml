@@ -1,0 +1,68 @@
+﻿@using Microsoft.AspNetCore.Html
+@{
+  ViewData["Title"] = "Quan hệ cổ đông - Powaco";
+  ViewData["RightView"] = "";
+  ViewData["Breadcrumb"] = new HtmlString(@"<span class='breadcrumb-link-wrap'
+              itemprop='itemListElement'
+              itemscope
+              itemtype='https://schema.org/ListItem'>
+          <a class='breadcrumb-link' asp-controller='Home' asp-action='Index' itemprop='item'>
+            <span class='breadcrumb-link-text-wrap' itemprop='name'>
+              <span class='home'> Trang chủ </span>
+            </span>
+          </a>
+          <meta itemprop='position' content='1' />
+        </span>
+        <span aria-label='breadcrumb separator' class='separator'> » </span>
+        <span class='breadcrumb-link-wrap'
+              itemprop='itemListElement'
+              itemscope
+              itemtype='https://schema.org/ListItem'>
+          <a class='breadcrumb-link'
+             asp-controller='Contact' asp-action='About'
+             itemprop='item'>
+            <span class='breadcrumb-link-text-wrap' itemprop='name'>
+              Giới thiệu
+            </span>
+          </a>
+          <meta itemprop='position' content='2' />
+        </span>
+        <span aria-label='breadcrumb separator' class='separator'> » </span>
+        Quan hệ cổ đông");
+}
+
+<main class="content">
+          <article class="post-133 page type-page status-publish entry"
+                   itemscope
+                   itemtype="https://schema.org/CreativeWork">
+            <header class="entry-header">
+              <h1 class="entry-title" itemprop="headline">Quan hệ cổ đông</h1>
+            </header>
+            <div class="entry-content" itemprop="text">
+              <p>
+                <iframe id="iframeMediaPlayer"
+                        style="
+                      width: 100%;
+                      height: 710px;
+                      margin: 0pt;
+                      padding: 0pt;
+                    "
+                        src="https://ezir.fpts.com.vn/thongtindoanhnghiepclient/DNA"
+                        frameborder="0"
+                        scrolling="auto"
+                        data-mce-fragment="1">
+                </iframe>
+              </p>
+            </div>
+          </article>
+        </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      $('body').removeClass('content-sidebar');
+      $('body').addClass('full-width-content');
+    });
+
+</script>
+
+
+

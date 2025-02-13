@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>@ViewData["Title"]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- CSS -->
+  @* <link rel="stylesheet" href="~/DNIT.WebNews.Admin.styles.css" asp-append-version="true" /> *@
+  @* <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" /> *@
+  <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="~/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="~/css/app.min.css" rel="stylesheet" type="text/css" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="~/favicon.ico">
+</head>
+
+<body>
+  <!-- Begin page -->
+  <div id="wrapper">
+    @await Html.PartialAsync("Home/_Header")
+    @await Html.PartialAsync("Home/_LeftSidebar")
+
+    <div class="content-page">
+
+      <!-- Start Content-->
+      <div class="content">
+
+        <div class="container-fluid pb-3">
+          <!-- start page title -->
+          <div class="row">
+            <div class="col-12">
+              <div class="page-title-box">
+                <div class="page-title-right">
+                  <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Powaco</a></li>
+                    @if (ViewData["ParentPage"] != null)
+                    {
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">@ViewData["ParentPage"]</a></li>
+                    }
+                    <li class="breadcrumb-item active">@ViewData["CurrentPage"]</li>
+                  </ol>
+                </div>
+                <h4 class="page-title">@ViewData["CurrentPage"]</h4>
+              </div>
+            </div>
+          </div>
+          <!-- end page title -->
+          @RenderBody()
+        </div>
+      </div> <!-- end content -->
+      @await Html.PartialAsync("Home/_Footer")
+    </div>
+  </div>
+  <!-- END wrapper -->
+  @await Html.PartialAsync("Home/_RightSidebar")
+  <!-- Script  -->
+  <script src="~/js/vendor.min.js"></script>
+  <script src="~/lib/chart-js/Chart.bundle.min.js"></script>
+  <script src="~/js/pages/dashboard.init.js"></script>
+  <script src="~/js/app.min.js"></script>
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

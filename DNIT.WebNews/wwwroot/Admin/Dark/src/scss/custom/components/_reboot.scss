@@ -1,0 +1,35 @@
+//
+// reboot.scss
+//
+
+
+// a
+a:focus {
+  outline: none;
+}
+
+// Forms
+label {
+  font-weight: $font-weight-medium;
+  font-size: 14px;
+  font-family: $font-family-secondary;
+}
+
+// Buttons
+button:focus {
+  outline: none;
+}
+
+// list group
+
+.list-group-item {
+  color: $gray-600;
+  &:hover{
+    color: $gray-600;
+  }
+}
+
+b,
+strong {
+  font-weight: $font-weight-semibold; 
+}

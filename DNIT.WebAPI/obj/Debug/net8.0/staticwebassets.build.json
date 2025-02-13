@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "B33XBUC/vI16wh2I8Sf3ksBuBMOsiTlVKazfCpvDkUQ=",
+  "Source": "DNIT.WebAPI",
+  "BasePath": "_content/DNIT.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

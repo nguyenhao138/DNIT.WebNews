@@ -1,0 +1,20 @@
+//
+// clockpicker.scss
+//
+
+
+
+/* Clock picker */
+.clockpicker-canvas line {
+    stroke: lighten($primary,15%);
+  }
+  .clockpicker-canvas-bearing, .clockpicker-canvas-fg,.clockpicker-canvas-bg {
+    fill: lighten($primary,15%);
+  }
+
+    .clockpicker-popover {
+    .btn-default {
+        background-color: $primary;
+        color: $white;
+    }
+}

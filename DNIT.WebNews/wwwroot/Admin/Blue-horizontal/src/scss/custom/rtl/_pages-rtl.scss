@@ -1,0 +1,169 @@
+// 
+// pages-rtl.scss
+//
+// Email
+.inbox-leftbar {
+    float: right;
+    padding: 0 10px 20px 20px;
+}
+
+.inbox-rightbar {
+    margin-right: 250px;
+    margin-left: 0px;
+}
+
+.message-list {
+    padding-right: 0;
+    .col-mail {
+        float: right !important;
+    }
+    .col-mail-1 {
+        .star-toggle,
+        .checkbox-wrapper-mail,
+        .dot {
+            float: right !important;
+        }
+        .dot {
+            margin: 22px 0px 0 26px;
+        }
+        .checkbox-wrapper-mail {
+            margin: 15px 20px 0 10px !important;
+        }
+        .star-toggle {
+            margin-right: 5px;
+        }
+        .title {
+            right: 110px !important;
+            left: 0 !important;
+        }
+    }
+    .col-mail-2 {
+        right: 320px !important;
+        left: 0 !important;
+        .subject {
+            right: 0 !important;
+            left: 200px !important;
+        }
+        .date {
+            left: 0;
+            padding-right: 80px;
+            padding-left: 0px !important;
+            right: auto !important;
+        }
+    }
+}
+
+@media (max-width: 648px) {
+    .inbox-rightbar {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .message-list li {
+        .col-mail-1 {
+            .title {
+                right: 80px !important;
+                left: 0px !important;
+            }
+        }
+        .col-mail-2 {
+            right: 160px !important;
+            .date {
+                text-align: left;
+                padding-left: 10px !important;
+                padding-right: 20px;
+            }
+        }
+    }
+}
+
+// Timelime
+
+/* =============
+   Timeline
+============= */
+
+.timeline {
+    .time-show {
+        margin-left: -75px;
+    }
+    &:before {
+        right: 50%;
+    }
+    .timeline-icon {
+        right: -54px;
+        i {
+            right: 4px;
+        }
+    }
+}
+
+h3.timeline-title {
+    margin: 0 0 5px;
+}
+
+.timeline-item {
+    .timeline-desk {
+        .arrow {
+            border-left: 12px solid rgba($light, 0.3) !important;
+            right: -12px;
+        }
+    }
+}
+
+.timeline-item.alt {
+    .timeline-desk {
+        .arrow-alt {
+            border-right: 12px solid rgba($light, 0.9) !important;
+            right: auto;
+            left: -12px;
+            border-left: none !important;
+        }
+        .album {
+            float: left;
+            a {
+                float: left;
+                margin-right: 5px;
+            }
+        }
+    }
+    .timeline-icon {
+        right: auto;
+        left: -56px;
+    }
+    .panel {
+        margin-right: 0;
+        margin-left: 45px;
+    }
+    h4 {
+        text-align: left;
+    }
+    p {
+        text-align: left;
+    }
+    .timeline-date {
+        text-align: left;
+    }
+}
+
+.timeline-desk {
+    .panel {
+        margin-right: 45px;
+        text-align: right;
+        margin-left: 0px;
+    }
+    .album {
+        a {
+            float: right;
+            margin-left: 5px;
+        }
+    }
+}
+
+// authentication
+.home-btn {
+    position: absolute;
+    left: 25px;
+    right: auto;
+}

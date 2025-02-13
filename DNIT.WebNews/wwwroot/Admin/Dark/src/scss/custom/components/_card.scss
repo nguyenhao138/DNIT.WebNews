@@ -1,0 +1,59 @@
+// 
+// card.scss
+//
+
+.card {
+    margin-bottom: $grid-gutter-width;
+    box-shadow: $box-shadow;
+}
+
+
+
+
+// Card title / Card Header
+.card-title,
+.card-header {
+    margin-top: 0;
+}
+
+.card-title{
+    font-size: 16px;
+}
+
+.header-title {
+    margin: 0 0 7px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 14px;
+    font-weight: $font-weight-semibold;
+}
+
+.sub-header {
+    margin-bottom: $grid-gutter-width;
+    color: $gray-500;
+    font-size: 14px;
+}
+
+
+// card footer
+
+.card-footer{
+    border-top: 1px solid $gray-200;
+}
+
+// card border
+
+.card-border{
+    .card-header{
+        border-top: 2px solid $gray-400;
+    }
+}
+
+// Custom card box
+.card-box {
+    background-color: $gray-100;
+    padding: $card-spacer-x;
+    box-shadow: $box-shadow;
+    margin-bottom: $grid-gutter-width;
+    @include border-radius($card-border-radius);
+}

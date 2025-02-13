@@ -1,0 +1,58 @@
+﻿<header class="site-header" itemscope itemtype="https:/schema.org/WPHeader">
+  <div class="wrap">
+    <div class="title-area">
+      <h1 class="site-title" itemprop="headline">
+        <a asp-controller="Home" asp-action="Index" title="Powaco">
+          <img src="~/Images/logo.svg" alt="Powaco" title="Powaco" />
+        </a>
+      </h1>
+      <p class="site-description" itemprop="description">
+        Công ty cổ phần điện nước An Giang
+      </p>
+    </div>
+    <div class="widget-area header-widget-area">
+      <section id="search-2" class="widget widget_search">
+        <div class="widget-wrap">
+          <form class="search-form"
+                itemprop="potentialAction"
+                itemscope
+                itemtype="https:/schema.org/SearchAction"
+                method="get"
+                action="Home/Index"  @* Cần xem lại chỗ này *@
+                role="search">
+            <input class="search-form-input"
+                   type="search"
+                   itemprop="query-input"
+                   name="s"
+                   id="searchform-67a02a83bd2772.91998193"
+                   placeholder="Tìm kiếm." />
+            <input class="search-form-submit" type="submit" value="Tìm" />
+            <meta itemprop="target"
+                  content="https:/diennuocag.com.vn/?s={s}" />
+          </form>
+        </div>
+      </section>
+      <section id="media_image-11" class="widget widget_media_image">
+        <div class="widget-wrap">
+          <img width="839"
+               height="80"
+               src="~/Images/title.svg"
+               class="image wp-image-1337 attachment-full size-full"
+               alt=""
+               decoding="async"
+               fetchpriority="high" />
+        </div>
+      </section>
+      <section id="media_image-12" class="widget widget_media_image">
+        <div class="widget-wrap">
+          <img width="264"
+               height="150"
+               src="~/Images/company.png"
+               class="image wp-image-71 attachment-full size-full"
+               alt=""
+               decoding="async" />
+        </div>
+      </section>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Abstack - Responsive Bootstrap 4 Admin Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Abstack</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Charts</a></li>
+                                            <li class="breadcrumb-item active">Jquery Knob</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Jquery Knob</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title -->
+
+                        <div class="row">
+                                <div class="col-md-3 col-sm-6 text-center">
+                                    <div class="card-box"  dir="ltr">
+                                        <input data-plugin="knob" data-width="150" data-height="150" data-bgColor="#32383d"
+                                               data-fgColor="#188ae2" data-displayInput=false value="35"/>
+    
+                                        <h5 class="text-muted mt-3">Disable display input</h5>
+                                    </div>
+                                </div><!-- end col-->
+                                <div class="col-md-3 col-sm-6 text-center">
+                                    <div class="card-box" dir="ltr">
+                                        <input data-plugin="knob" data-width="150" data-height="150" data-cursor=true
+                                               data-fgColor="#4bd396" data-bgColor="#32383d" value="29"  data-knob-icon="icon-dollar"/>
+    
+                                        <h5 class="text-muted mt-3">Cursor mode</h5>
+                                    </div>
+                                </div><!-- end col-->
+                                <div class="col-md-3 col-sm-6 text-center">
+                                    <div class="card-box" dir="ltr">
+                                        <input data-plugin="knob" data-width="150" data-height="150" data-min="-100"
+                                               data-fgColor="#3ac9d6" data-bgColor="#32383d" data-displayPrevious=true value="44"/>
+    
+                                        <h5 class="text-muted mt-3">Display previous value</h5>
+                                    </div>
+                                </div><!-- end col-->
+                                <div class="col-md-3 col-sm-6 text-center">
+                                    <div class="card-box" dir="ltr">
+                                        <input data-plugin="knob" data-width="150" data-height="150" data-min="-100"
+                                               data-fgColor="#f9c851" data-bgColor="#32383d" data-displayPrevious=true data-angleOffset=-125
+                                               data-angleArc=250 value="44"/>
+    
+                                        <h5 class="text-muted mt-3">Angle offset and arc</h5>
+                                    </div>
+                                </div><!-- end col-->
+                            </div><!-- end row -->
+    
+                            <div class="row">
+    
+                                <div class="col-md-3 col-sm-6 text-center">
+                                    <div class="card-box" dir="ltr">
+                                        <input data-plugin="knob" data-width="150" data-height="150"
+                                               data-angleOffset="90" data-linecap="round" data-fgColor="#f5707a"
+                                               data-bgColor="#32383d" value="35"/>
+    
+                                        <h5 class="text-muted mt-3">Angle offset</h5>
+                                    </div>
+                                </div><!-- end col-->
+    
+                                <div class="col-md-3 col-sm-6 text-center">
+                                    <div class="card-box" dir="ltr">
+                                        <input data-plugin="knob" data-width="150" data-height="150" data-min="-15000"
+                                               data-displayPrevious=true data-max="15000" data-step="1000"
+                                               value="-11000" data-fgColor="#3b3e47" data-bgColor="#32383d"/>
+    
+                                        <h5 class="text-muted mt-3">5-digit values, step 1000</h5>
+                                    </div>
+                                </div><!-- end col-->
+    
+                                <div class="col-md-3 col-sm-6 text-center">
+                                    <div class="card-box" dir="ltr">
+                                        <input data-plugin="knob" data-width="150" data-height="150" data-linecap=round
+                                               data-fgColor="#6b5fb5" data-bgColor="#32383d" value="80" data-skin="tron" data-angleOffset="180"
+                                               data-readOnly=true data-thickness=".1"/>
+    
+                                        <h5 class="text-muted mt-3">Readonly</h5>
+                                    </div>
+                                </div><!-- end col-->
+    
+                                <div class="col-md-3 col-sm-6 text-center">
+                                    <div class="card-box" dir="ltr">
+                                        <input data-plugin="knob" data-width="150" data-height="150"
+                                               data-displayPrevious=true data-fgColor="#f06292" data-bgColor="#32383d" data-skin="tron"
+                                               data-cursor=true value="75" data-thickness=".2" data-angleOffset=-125
+                                               data-angleArc=250 />
+    
+                                        <h5 class="text-muted mt-3">Angle offset and arc</h5>
+                                    </div>
+                                </div><!-- end col-->
+    
+                            </div><!-- end row-->
+    
+    
+                        
+                    </div> <!-- end container-fluid -->
+
+                </div> <!-- end content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- KNOB JS -->
+        <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

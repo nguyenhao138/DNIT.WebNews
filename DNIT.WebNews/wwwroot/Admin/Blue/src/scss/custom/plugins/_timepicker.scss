@@ -1,0 +1,24 @@
+
+// 
+// timepicker.scss
+//
+
+.bootstrap-timepicker-widget {
+    table {
+        td {
+            input {
+                width: 35px;
+                border: 0px;
+    
+            }
+            
+            a{
+                &:hover {
+                    background-color: transparent;
+                    border: 1px solid transparent;
+                }
+            }
+
+        }     
+    }
+}

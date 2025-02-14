@@ -5,26 +5,26 @@
     "version": "1.0"
   },
   "paths": {
-    "/Account/login": {
+    "/Auth/login": {
       "post": {
         "tags": [
-          "Account"
+          "Auth"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             }
           }
@@ -36,26 +36,26 @@
         }
       }
     },
-    "/Account/refresh-token": {
+    "/Auth/refresh-token": {
       "post": {
         "tags": [
-          "Account"
+          "Auth"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             }
           }
@@ -67,10 +67,10 @@
         }
       }
     },
-    "/Account": {
+    "/Auth": {
       "get": {
         "tags": [
-          "Account"
+          "Auth"
         ],
         "responses": {
           "200": {
@@ -80,7 +80,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AccountModel"
+                    "$ref": "#/components/schemas/AuthModel"
                   }
                 }
               },
@@ -88,7 +88,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AccountModel"
+                    "$ref": "#/components/schemas/AuthModel"
                   }
                 }
               },
@@ -96,7 +96,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AccountModel"
+                    "$ref": "#/components/schemas/AuthModel"
                   }
                 }
               }
@@ -106,23 +106,23 @@
       },
       "post": {
         "tags": [
-          "Account"
+          "Auth"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             }
           }
@@ -133,17 +133,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AccountModel"
+                  "$ref": "#/components/schemas/AuthModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AccountModel"
+                  "$ref": "#/components/schemas/AuthModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AccountModel"
+                  "$ref": "#/components/schemas/AuthModel"
                 }
               }
             }
@@ -151,10 +151,10 @@
         }
       }
     },
-    "/Account/{id}": {
+    "/Auth/{id}": {
       "get": {
         "tags": [
-          "Account"
+          "Auth"
         ],
         "parameters": [
           {
@@ -172,17 +172,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AccountModel"
+                  "$ref": "#/components/schemas/AuthModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AccountModel"
+                  "$ref": "#/components/schemas/AuthModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AccountModel"
+                  "$ref": "#/components/schemas/AuthModel"
                 }
               }
             }
@@ -191,7 +191,7 @@
       },
       "put": {
         "tags": [
-          "Account"
+          "Auth"
         ],
         "parameters": [
           {
@@ -207,17 +207,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountModel"
+                "$ref": "#/components/schemas/AuthModel"
               }
             }
           }
@@ -230,7 +230,7 @@
       },
       "delete": {
         "tags": [
-          "Account"
+          "Auth"
         ],
         "parameters": [
           {
@@ -291,13 +291,9 @@
   },
   "components": {
     "schemas": {
-      "AccountModel": {
+      "AuthModel": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
           "userName": {
             "type": "string",
             "nullable": true
@@ -347,6 +343,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
           "username": {
             "type": "string",
             "nullable": true
@@ -366,6 +366,10 @@
           "refreshToken": {
             "type": "string",
             "nullable": true
+          },
+          "refreshTokenExpiryTime": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false

@@ -1,15 +1,15 @@
 [
   {
-    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AccountController",
-    "Method": "GetAccountModels",
-    "RelativePath": "Account",
+    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
+    "Method": "GetAuthModels",
+    "RelativePath": "Auth",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[DNIT.WebAPI.Models.AccountModel, DNIT.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DNIT.Core.Models.AuthModel, DNIT.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -20,22 +20,22 @@
     ]
   },
   {
-    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AccountController",
-    "Method": "CreateAccountModel",
-    "RelativePath": "Account",
+    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
+    "Method": "CreateAuthModel",
+    "RelativePath": "Auth",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "AccountModel",
-        "Type": "DNIT.WebAPI.Models.AccountModel",
+        "Name": "authModel",
+        "Type": "DNIT.Core.Models.AuthModel",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "DNIT.WebAPI.Models.AccountModel",
+        "Type": "DNIT.Core.Models.AuthModel",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -46,9 +46,9 @@
     ]
   },
   {
-    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AccountController",
-    "Method": "GetAccountModel",
-    "RelativePath": "Account/{id}",
+    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
+    "Method": "GetAuthModel",
+    "RelativePath": "Auth/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -61,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DNIT.WebAPI.Models.AccountModel",
+        "Type": "DNIT.Core.Models.AuthModel",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -72,9 +72,9 @@
     ]
   },
   {
-    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AccountController",
-    "Method": "UpdateAccountModel",
-    "RelativePath": "Account/{id}",
+    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
+    "Method": "UpdateAuthModel",
+    "RelativePath": "Auth/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -85,17 +85,17 @@
         "IsRequired": true
       },
       {
-        "Name": "AccountModelIn",
-        "Type": "DNIT.WebAPI.Models.AccountModel",
+        "Name": "authModelIn",
+        "Type": "DNIT.Core.Models.AuthModel",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AccountController",
-    "Method": "DeleteAccountModel",
-    "RelativePath": "Account/{id}",
+    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
+    "Method": "DeleteAuthModel",
+    "RelativePath": "Auth/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -109,32 +109,32 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AccountController",
+    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
     "Method": "Login",
-    "RelativePath": "Account/login",
+    "RelativePath": "Auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "model",
-        "Type": "DNIT.WebAPI.Models.AccountModel",
+        "Type": "DNIT.Core.Models.AuthModel",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AccountController",
+    "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
     "Method": "RefreshToken",
-    "RelativePath": "Account/refresh-token",
+    "RelativePath": "Auth/refresh-token",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "model",
-        "Type": "DNIT.WebAPI.Models.AccountModel",
+        "Type": "DNIT.Core.Models.AuthModel",
         "IsRequired": true
       }
     ],

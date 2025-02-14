@@ -46,6 +46,7 @@ D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\DNIT.WebAPI.AssemblyInfo.cs
 D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\DNIT.WebAPI.csproj.CoreCompileInputs.cache
 D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\DNIT.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\DNIT.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\DNIT.WebAPI.sourcelink.json
 D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\scopedcss\bundle\DNIT.WebAPI.styles.css
 D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\staticwebassets.build.json
 D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\staticwebassets.development.json

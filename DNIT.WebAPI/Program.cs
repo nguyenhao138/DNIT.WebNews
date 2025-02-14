@@ -1,12 +1,16 @@
 ﻿using System.Text;
 using DNIT.WebAPI.Controllers.NewsAdmin;
-using DNIT.WebAPI.Models;
-using DNIT.WebAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
+using DNIT.Core.Models;
+using DNIT.Core;
+using DNIT.Dao;
+using DNIT.Core.Service;
+using DNIT.Dao.Repository;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,13 +32,11 @@ builder.Services.AddSingleton<IMongoDatabase>(sp =>
   return client.GetDatabase(mongoSettings.DatabaseName);
 });
 
-builder.Services.AddScoped<IPasswordHasher<AccountModel>, PasswordHasher<AccountModel>>();
-builder.Services.AddScoped<AuthService>();
-
+builder.Services.AddScoped<IPasswordHasher<AuthModel>, PasswordHasher<AuthModel>>();
 
 
 // Đăng ký AccountService
-builder.Services.AddSingleton<AuthService>();
+builder.Services.AddScoped<AuthService>();
 
 // Thêm dịch vụ xác thực JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -45,11 +47,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
       };
     });
+builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<UserRepository>();
 
 builder.Services.AddAuthorization();
 

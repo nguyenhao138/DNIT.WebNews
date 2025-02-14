@@ -1,3 +1,9 @@
 D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\staticwebassets.build.json
 D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\staticwebassets.build.json
 D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\staticwebassets.build.json
+D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\staticwebassets.build.json
+D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\staticwebassets.build.json
+D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\staticwebassets.build.json
+D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\staticwebassets.build.json
+D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\staticwebassets.build.json
+D:\Project\DNITWebNews\DNIT.WebAPI\obj\Debug\net8.0\staticwebassets.build.json

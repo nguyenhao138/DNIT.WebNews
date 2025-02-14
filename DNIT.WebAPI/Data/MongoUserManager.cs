@@ -1,23 +1,23 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using MongoDB.Driver;
-using DNIT.WebAPI.Models;
+using DNIT.Core.Models;
 
 namespace DNIT.WebAPI.Data
 {
   public class MongoUserManager
   {
-    private readonly IMongoCollection<AccountModel> _accountsCollection;
-    private readonly IPasswordHasher<AccountModel> _passwordHasher;
+    private readonly IMongoCollection<AuthModel> _accountsCollection;
+    private readonly IPasswordHasher<AuthModel> _passwordHasher;
 
     // Constructor với IMongoCollection và IPasswordHasher
-    public MongoUserManager(IMongoDatabase database, IPasswordHasher<AccountModel> passwordHasher)
+    public MongoUserManager(IMongoDatabase database, IPasswordHasher<AuthModel> passwordHasher)
     {
-      _accountsCollection = database.GetCollection<AccountModel>("Accounts");
+      _accountsCollection = database.GetCollection<AuthModel>("Accounts");
       _passwordHasher = passwordHasher;
     }
 
     // Tạo tài khoản mới
-    public async Task<IdentityResult> CreateAsync(AccountModel user, string password)
+    public async Task<IdentityResult> CreateAsync(AuthModel user, string password)
     {
       var existingUser = await _accountsCollection
           .Find(x => x.Username == user.Username)
@@ -38,7 +38,7 @@ namespace DNIT.WebAPI.Data
     }
 
     // Tìm tài khoản theo tên người dùng
-    public async Task<AccountModel> FindByNameAsync(string username)
+    public async Task<AuthModel> FindByNameAsync(string username)
     {
       var user = await _accountsCollection
           .Find(x => x.Username == username)
@@ -47,13 +47,13 @@ namespace DNIT.WebAPI.Data
     }
 
     // Kiểm tra mật khẩu
-    public async Task<bool> CheckPasswordAsync(AccountModel user, string password)
+    public async Task<bool> CheckPasswordAsync(AuthModel user, string password)
     {
       return _passwordHasher.VerifyHashedPassword(user, user.Password, password) == PasswordVerificationResult.Success;
     }
 
     // Cập nhật thông tin tài khoản
-    public async Task<IdentityResult> UpdateAsync(AccountModel user)
+    public async Task<IdentityResult> UpdateAsync(AuthModel user)
     {
       var result = await _accountsCollection.ReplaceOneAsync(u => u.Id == user.Id, user);
       if (result.ModifiedCount == 0)

@@ -6,18 +6,18 @@ namespace DNIT.WebAPI.Data
 {
   public class MongoUserManager
   {
-    private readonly IMongoCollection<AuthModel> _accountsCollection;
-    private readonly IPasswordHasher<AuthModel> _passwordHasher;
+    private readonly IMongoCollection<AccountModel> _accountsCollection;
+    private readonly IPasswordHasher<AccountModel> _passwordHasher;
 
     // Constructor với IMongoCollection và IPasswordHasher
-    public MongoUserManager(IMongoDatabase database, IPasswordHasher<AuthModel> passwordHasher)
+    public MongoUserManager(IMongoDatabase database, IPasswordHasher<AccountModel> passwordHasher)
     {
-      _accountsCollection = database.GetCollection<AuthModel>("Accounts");
+      _accountsCollection = database.GetCollection<AccountModel>("Accounts");
       _passwordHasher = passwordHasher;
     }
 
     // Tạo tài khoản mới
-    public async Task<IdentityResult> CreateAsync(AuthModel user, string password)
+    public async Task<IdentityResult> CreateAsync(AccountModel user, string password)
     {
       var existingUser = await _accountsCollection
           .Find(x => x.Username == user.Username)
@@ -32,13 +32,13 @@ namespace DNIT.WebAPI.Data
       }
 
       // Mã hóa mật khẩu và lưu tài khoản vào MongoDB
-      user.Password = _passwordHasher.HashPassword(user, password);
+      user.PasswordHash = _passwordHasher.HashPassword(user, password);
       await _accountsCollection.InsertOneAsync(user);
       return IdentityResult.Success;
     }
 
     // Tìm tài khoản theo tên người dùng
-    public async Task<AuthModel> FindByNameAsync(string username)
+    public async Task<AccountModel> FindByNameAsync(string username)
     {
       var user = await _accountsCollection
           .Find(x => x.Username == username)
@@ -47,13 +47,13 @@ namespace DNIT.WebAPI.Data
     }
 
     // Kiểm tra mật khẩu
-    public async Task<bool> CheckPasswordAsync(AuthModel user, string password)
+    public async Task<bool> CheckPasswordAsync(AccountModel user, string password)
     {
-      return _passwordHasher.VerifyHashedPassword(user, user.Password, password) == PasswordVerificationResult.Success;
+      return _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, password) == PasswordVerificationResult.Success;
     }
 
     // Cập nhật thông tin tài khoản
-    public async Task<IdentityResult> UpdateAsync(AuthModel user)
+    public async Task<IdentityResult> UpdateAsync(AccountModel user)
     {
       var result = await _accountsCollection.ReplaceOneAsync(u => u.Id == user.Id, user);
       if (result.ModifiedCount == 0)

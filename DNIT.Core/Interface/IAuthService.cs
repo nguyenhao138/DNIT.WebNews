@@ -4,14 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DNIT.Core.Models;
+using MongoDB.Bson;
 
 namespace DNIT.Core.Interface
 {
   public interface IAuthService
   {
-    Task<AuthModel?> FindByUsernameAsync(string username);
-    Task<string> GenerateAccessToken(string userId);
-    Task<string> GenerateRefreshTokenAsync(string userId);
-    Task<bool> UpdateRefreshTokenAsync(string userId, string refreshToken, DateTime expiryTime);
+    Task<List<AccountModel>> ListAccount();
+
+    Task<AccountModel?> GetAccount(string id);
+
+    Task CreateAccount(AccountModel newBook);
+
+    Task UpdateAccount(string id, AccountModel updatedBook);
+
+    Task RemoveAccount(string id);
   }
 }

@@ -1,0 +1,117 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DNIT.WebNews
+build_property.RootNamespace = DNIT.WebNews
+build_property.ProjectDir = D:\Project\DNITWebNews\DNIT.WebNews\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Project\DNITWebNews\DNIT.WebNews
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Contact/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/PostDetail/ChucNangVaNhiemVu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdERldGFpbFxDaHVjTmFuZ1ZhTmhpZW1WdS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/PostDetail/CoCauToChuc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdERldGFpbFxDb0NhdVRvQ2h1Yy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/PostDetail/DinhHuongPhatTrien.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdERldGFpbFxEaW5oSHVvbmdQaGF0VHJpZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/PostDetail/QuanHeCoDong.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdERldGFpbFxRdWFuSGVDb0RvbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/PostDetail/ThanhTich.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdERldGFpbFxUaGFuaFRpY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/PostList/DichVuTrucTuyen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdExpc3RcRGljaFZ1VHJ1Y1R1eWVuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/PostList/KhachHangCanBiet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdExpc3RcS2hhY2hIYW5nQ2FuQmlldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/PostList/SanPhamDichVu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdExpc3RcU2FuUGhhbURpY2hWdS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/PostList/TinTucSuKien.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdExpc3RcVGluVHVjU3VLaWVuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Shared/Home/_ContentBanner.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWVcX0NvbnRlbnRCYW5uZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Shared/Home/_ContentClient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWVcX0NvbnRlbnRDbGllbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Shared/Home/_ContentFix.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWVcX0NvbnRlbnRGaXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Shared/Home/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWVcX0Zvb3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Shared/Home/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWVcX0hlYWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Shared/Home/_Nav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWVcX05hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Shared/Home/_RightView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWVcX1JpZ2h0Vmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project/DNITWebNews/DNIT.WebNews/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-w79fruuriv

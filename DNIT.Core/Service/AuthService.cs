@@ -1,30 +1,35 @@
-﻿using Microsoft.Extensions.Configuration;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using DNIT.Core.Models;
+using DNIT.Core.Interface;
+using MongoDB.Bson;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DNIT.Core.Service
 {
-  public class AuthService
+  public class AuthService: IAuthService
   {
-    private readonly IMongoCollection<AuthModel> _authCollection;
+    private readonly IMongoCollection<AccountModel> _authCollection;
 
     public AuthService(IMongoDatabase database)
-    {
-      _authCollection= database.GetCollection<AuthModel>("Account");
+    { 
+      _authCollection= database.GetCollection<AccountModel>("Account");
     }
 
-    public List<AuthModel> Get() => _authCollection.Find(auth => true).ToList();
+    public async Task<List<AccountModel>> ListAccount() =>
+        await _authCollection.Find(_ => true).ToListAsync();
 
-    public AuthModel Get(string id) => _authCollection.Find(auth => auth.Id == id).FirstOrDefault();
+    public async Task<AccountModel?> GetAccount(string id) =>
+        await _authCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
 
-    public void Create(AuthModel authModel) => _authCollection.InsertOne(authModel);
+    public async Task CreateAccount(AccountModel newBook) =>
+        await _authCollection.InsertOneAsync(newBook);
 
-    public void Update(string id, AuthModel authModelIn) =>
-        _authCollection.ReplaceOne(auth => auth.Id == id, authModelIn);
+    public async Task UpdateAccount(string id, AccountModel updatedBook) =>
+        await _authCollection.ReplaceOneAsync(x => x.Id == id, updatedBook);
 
-    public void Remove(string id) =>
-        _authCollection.DeleteOne(auth => auth.Id == id);
+    public async Task RemoveAccount(string id) =>
+        await _authCollection.DeleteOneAsync(x => x.Id == id);
   }
-
 }
 

@@ -6,10 +6,9 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using DNIT.Core.Models;
-using DNIT.Core;
-using DNIT.Dao;
 using DNIT.Core.Service;
 using DNIT.Dao.Repository;
+using DNIT.Core.Interface;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,11 +31,13 @@ builder.Services.AddSingleton<IMongoDatabase>(sp =>
   return client.GetDatabase(mongoSettings.DatabaseName);
 });
 
-builder.Services.AddScoped<IPasswordHasher<AuthModel>, PasswordHasher<AuthModel>>();
+builder.Services.AddScoped<IPasswordHasher<AccountModel>, PasswordHasher<AccountModel>>();
 
 
 // Đăng ký AccountService
-builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IJwtService, JwtService>();
+
 
 // Thêm dịch vụ xác thực JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

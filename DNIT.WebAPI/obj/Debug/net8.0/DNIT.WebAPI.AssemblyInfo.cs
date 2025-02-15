@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DNIT.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e7b32c8c23d065855d1ff719abff61dd8e5ac11")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36e57d30609d7de059799b6fe82caba3eb8e7317")]
 [assembly: System.Reflection.AssemblyProductAttribute("DNIT.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DNIT.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
-    "Method": "GetAuthModels",
+    "Method": "Get",
     "RelativePath": "Auth",
     "HttpMethod": "GET",
     "IsController": true,
@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[DNIT.Core.Models.AuthModel, DNIT.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DNIT.Core.Models.AccountModel, DNIT.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -21,33 +21,23 @@
   },
   {
     "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
-    "Method": "CreateAuthModel",
+    "Method": "Post",
     "RelativePath": "Auth",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "authModel",
-        "Type": "DNIT.Core.Models.AuthModel",
+        "Name": "newBook",
+        "Type": "DNIT.Core.Models.AccountModel",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "DNIT.Core.Models.AuthModel",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
-    "Method": "GetAuthModel",
+    "Method": "Get",
     "RelativePath": "Auth/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -61,7 +51,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DNIT.Core.Models.AuthModel",
+        "Type": "DNIT.Core.Models.AccountModel",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -73,7 +63,7 @@
   },
   {
     "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
-    "Method": "UpdateAuthModel",
+    "Method": "Update",
     "RelativePath": "Auth/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -85,8 +75,8 @@
         "IsRequired": true
       },
       {
-        "Name": "authModelIn",
-        "Type": "DNIT.Core.Models.AuthModel",
+        "Name": "updatedBook",
+        "Type": "DNIT.Core.Models.AccountModel",
         "IsRequired": true
       }
     ],
@@ -94,7 +84,7 @@
   },
   {
     "ContainingType": "DNIT.WebAPI.Controllers.NewsAdmin.AuthController",
-    "Method": "DeleteAuthModel",
+    "Method": "Delete",
     "RelativePath": "Auth/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -118,7 +108,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "DNIT.Core.Models.AuthModel",
+        "Type": "DNIT.Core.Models.AccountModel",
         "IsRequired": true
       }
     ],
@@ -134,7 +124,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "DNIT.Core.Models.AuthModel",
+        "Type": "DNIT.Core.Models.AccountModel",
         "IsRequired": true
       }
     ],

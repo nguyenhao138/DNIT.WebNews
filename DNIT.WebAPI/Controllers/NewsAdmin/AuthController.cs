@@ -1,5 +1,6 @@
 ﻿using DNIT.Core.Models;
-using DNIT.Core.Service;
+using DNIT.Core.Interface;
+//using DNIT.Core.Service;
 using DNIT.Dao.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,41 +12,46 @@ namespace DNIT.WebAPI.Controllers.NewsAdmin
   public class AuthController : ControllerBase
   {
 
-    private readonly AuthService _authService;
+    private readonly IAuthService _authService;
     private readonly UserRepository _userRepository;
-    private readonly JwtService _jwtService;
-    private readonly IPasswordHasher<AuthModel> _passwordHasher;
+    private readonly IJwtService _jwtService;
+    private readonly IPasswordHasher<AccountModel> _passwordHasher;
+    private readonly ILogger<AuthController> _logger;
 
-    public AuthController(IPasswordHasher<AuthModel> passwordHasher, AuthService authService, JwtService jwtService, UserRepository userRepository)
+    public AuthController(IPasswordHasher<AccountModel> passwordHasher, IAuthService authService, IJwtService jwtService, UserRepository userRepository, ILogger<AuthController> logger)
     {
       _jwtService = jwtService;
       _passwordHasher = passwordHasher;
       _authService = authService;
       _userRepository = userRepository;
+      _logger = logger;
     }
 
     [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] AuthModel model)
+    public async Task<IActionResult> Login([FromBody] AccountModel model) 
     {
-      var user = await _userRepository.FindByUsernameAsync(model.Username);
-      if (user == null)
-        return Unauthorized("Not found Account");
 
-      var passwordVerificationResult = _passwordHasher.VerifyHashedPassword(user, user.Password, model.Password);
+      var user = await _userRepository.GetByUsername(model.Username);
+      if (user == null)
+        return Unauthorized("Account not found");
+
+      var passwordVerificationResult = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, model.Password);
       if (passwordVerificationResult == PasswordVerificationResult.Failed)
         return Unauthorized("Incorrect Password");
 
       var accessToken = _jwtService.GenerateAccessToken(user.Id);
       var refreshToken = _jwtService.GenerateRefreshToken();
-      await _userRepository.UpdateRefreshTokenAsync(user.Id, refreshToken, DateTime.UtcNow.AddDays(7));
+      await _userRepository.UpdateRefreshToken(user.Id, refreshToken, DateTime.UtcNow.AddDays(7));
 
       return Ok(new { AccessToken = accessToken, RefreshToken = refreshToken });
+
+      
     }
 
     [HttpPost("refresh-token")]
-    public async Task<IActionResult> RefreshToken([FromBody] AuthModel model)
+    public async Task<IActionResult> RefreshToken([FromBody] AccountModel model)
     {
-      var user = await _userRepository.FindByUsernameAsync(model.Username);
+      var user = await _userRepository.GetByUsername(model.Username);
 
       if (user == null || user.RefreshToken != model.RefreshToken)
       {
@@ -56,7 +62,7 @@ namespace DNIT.WebAPI.Controllers.NewsAdmin
       var newAccessToken = _jwtService.GenerateAccessToken(user.Id);
       var newRefreshToken = _jwtService.GenerateRefreshToken();
 
-      await _userRepository.UpdateRefreshTokenAsync(user.Id, newRefreshToken, DateTime.UtcNow.AddDays(7));
+      await _userRepository.UpdateRefreshToken(user.Id, newRefreshToken, DateTime.UtcNow.AddDays(7));
 
       return Ok(new
       {
@@ -67,68 +73,61 @@ namespace DNIT.WebAPI.Controllers.NewsAdmin
 
     // ✅ GET: api/AuthModels (Lấy danh sách AuthModel)
     [HttpGet]
-    public ActionResult<List<AuthModel>> GetAuthModels()
-    {
-      return _authService.Get();
-    }
+    public async Task<List<AccountModel>> Get() =>
+        await _authService.ListAccount();
 
-    // ✅ GET: api/AuthModels/{id} (Lấy AuthModel theo ID)
-    [HttpGet("{id}")]
-    public ActionResult<AuthModel> GetAuthModel(string id)
+    [HttpGet("{id:length(24)}")]
+    public async Task<ActionResult<AccountModel>> Get(string id)
     {
-      var authModel = _authService.Get(id);
-      if (authModel == null)
+      var book = await _authService.GetAccount(id);
+
+      if (book is null)
       {
-        return NotFound(new { message = "AuthModel not found" });
+        return NotFound();
       }
-      return authModel;
+
+      return book;
     }
 
-    // ✅ POST: api/AuthModels (Tạo AuthModel mới)
     [HttpPost]
-    public ActionResult<AuthModel> CreateAuthModel([FromBody] AuthModel authModel)
+    public async Task<IActionResult> Post(AccountModel newBook)
     {
-      if (!ModelState.IsValid)
-      {
-        return BadRequest(ModelState);
-      }
+      await _authService.CreateAccount(newBook);
 
-      _authService.Create(authModel);
-      return CreatedAtAction(nameof(GetAuthModel), new { id = authModel.Id }, authModel);
+      return CreatedAtAction(nameof(Get), new { id = newBook.Id }, newBook);
     }
 
-    // ✅ PUT: api/AuthModels/{id} (Cập nhật AuthModel)
-    [HttpPut("{id}")]
-    public IActionResult UpdateAuthModel(string id, [FromBody] AuthModel authModelIn)
+    [HttpPut("{id:length(24)}")]
+    public async Task<IActionResult> Update(string id, AccountModel updatedBook)
     {
-      if (!ModelState.IsValid)
+      var book = await _authService.GetAccount(id);
+
+      if (book is null)
       {
-        return BadRequest(ModelState);
+        return NotFound();
       }
 
-      var authModel = _authService.Get(id);
-      if (authModel == null)
-      {
-        return NotFound(new { message = "AuthModel not found" });
-      }
+      updatedBook.Id = book.Id;
 
-      _authService.Update(id, authModelIn);
+      await _authService.UpdateAccount(id, updatedBook);
+
       return NoContent();
     }
 
-    // ✅ DELETE: api/AuthModels/{id} (Xóa AuthModel)
-    [HttpDelete("{id}")]
-    public IActionResult DeleteAuthModel(string id)
+    [HttpDelete("{id:length(24)}")]
+    public async Task<IActionResult> Delete(string id)
     {
-      var authModel = _authService.Get(id);
-      if (authModel == null)
+      var book = await _authService.GetAccount(id);
+
+      if (book is null)
       {
-        return NotFound(new { message = "AuthModel not found" });
+        return NotFound();
       }
 
-      _authService.Remove(id);
+      await _authService.RemoveAccount(id);
+
       return NoContent();
     }
 
-  }
+  } 
 }

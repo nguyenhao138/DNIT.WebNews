@@ -14,17 +14,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             }
           }
@@ -45,17 +45,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             }
           }
@@ -80,7 +80,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AuthModel"
+                    "$ref": "#/components/schemas/AccountModel"
                   }
                 }
               },
@@ -88,7 +88,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AuthModel"
+                    "$ref": "#/components/schemas/AccountModel"
                   }
                 }
               },
@@ -96,7 +96,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AuthModel"
+                    "$ref": "#/components/schemas/AccountModel"
                   }
                 }
               }
@@ -112,41 +112,24 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuthModel"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuthModel"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuthModel"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -162,6 +145,8 @@
             "in": "path",
             "required": true,
             "schema": {
+              "maxLength": 24,
+              "minLength": 24,
               "type": "string"
             }
           }
@@ -172,17 +157,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AuthModel"
+                  "$ref": "#/components/schemas/AccountModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AuthModel"
+                  "$ref": "#/components/schemas/AccountModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AuthModel"
+                  "$ref": "#/components/schemas/AccountModel"
                 }
               }
             }
@@ -199,6 +184,8 @@
             "in": "path",
             "required": true,
             "schema": {
+              "maxLength": 24,
+              "minLength": 24,
               "type": "string"
             }
           }
@@ -207,17 +194,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthModel"
+                "$ref": "#/components/schemas/AccountModel"
               }
             }
           }
@@ -238,6 +225,8 @@
             "in": "path",
             "required": true,
             "schema": {
+              "maxLength": 24,
+              "minLength": 24,
               "type": "string"
             }
           }
@@ -291,58 +280,9 @@
   },
   "components": {
     "schemas": {
-      "AuthModel": {
+      "AccountModel": {
         "type": "object",
         "properties": {
-          "userName": {
-            "type": "string",
-            "nullable": true
-          },
-          "normalizedUserName": {
-            "type": "string",
-            "nullable": true
-          },
-          "normalizedEmail": {
-            "type": "string",
-            "nullable": true
-          },
-          "emailConfirmed": {
-            "type": "boolean"
-          },
-          "passwordHash": {
-            "type": "string",
-            "nullable": true
-          },
-          "securityStamp": {
-            "type": "string",
-            "nullable": true
-          },
-          "concurrencyStamp": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneNumberConfirmed": {
-            "type": "boolean"
-          },
-          "twoFactorEnabled": {
-            "type": "boolean"
-          },
-          "lockoutEnd": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "lockoutEnabled": {
-            "type": "boolean"
-          },
-          "accessFailedCount": {
-            "type": "integer",
-            "format": "int32"
-          },
           "id": {
             "type": "string",
             "nullable": true
@@ -359,6 +299,10 @@
             "type": "string",
             "nullable": true
           },
+          "passwordHash": {
+            "type": "string",
+            "nullable": true
+          },
           "accessToken": {
             "type": "string",
             "nullable": true
@@ -369,7 +313,8 @@
           },
           "refreshTokenExpiryTime": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false
